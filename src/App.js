@@ -1,15 +1,13 @@
-import React from 'react';
-import './styles/App.css';
-import Title from './components/Title';
-import FlightInput from './components/FlightInput';
-import SubmitData from './components/SubmitData';
+import React from "react";
+import "./styles/App.css";
+import Title from "./components/Title";
+import FlightInput from "./components/FlightInput";
 
 function App() {
   return (
     <div className="App">
       <Title />
-      <FlightInput/>  
-      <SubmitData/>
+      <FlightInput />
     </div>
   );
 }

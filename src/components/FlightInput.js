@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/FlightInput.css";
+
 const FlightInput = () => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmitButton = (event) => {
+    event.preventDefault();
+    setSubmitted(true);
+  }
   return (
     <div className="container d-flex align-items-center justify-content-center">
+    {!submitted ? (
       <form>
         <div className="form-group mb-4">
           <label htmlFor="nameInput">Your Name:</label>
@@ -45,7 +53,13 @@ const FlightInput = () => {
             placeholder="e.g Vienna"
           />
         </div>
+        <button type="submit" class="btn btn-primary" onClick={handleSubmitButton}>
+          Submit
+        </button>
       </form>
+    ) : (
+      <h3>Form submitted! Thank you</h3>
+    )}
     </div>
   );
 };
